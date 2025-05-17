@@ -26,21 +26,31 @@ int	is_all_spaces(char *str)
 	return (1);
 }
 
+int	get_split_len(char **split)
+{
+	int	i = 0;
+	while (split[i])
+		i++;
+	return (i);
+}
+
 static void	process_token(char *token, t_node **a, char **split)
 {
 	int	error;
 	int	value;
+	int	args;
 
 	error = 0;
+	args = get_split_len(split);
 	if (!is_valid_input(token))
 	{
-		free_split(split, count_words(token, ' '));
+		free_split(split, args);
 		write_error(a);
 	}
 	value = ft_atoi(token, &error);
 	if (error || !add_node(a, value))
 	{
-		free_split(split, count_words(token, ' '));
+		free_split(split, args);
 		write_error(a);
 	}
 }
