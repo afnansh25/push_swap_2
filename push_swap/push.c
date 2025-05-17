@@ -16,29 +16,29 @@ void	push(t_node **des, t_node **src)
 {
 	t_node	*temp_node;
 
-	if (!des || !*des)
+	if (!src || !*src)
 		return ;
-	temp_node = *des;
-	*des = (*des)->next;
-	if (!*src)
+	temp_node = *src;
+	*src = (*src)->next;
+	if (!*des)
 	{
 		temp_node->next = NULL;
-		(*src) = temp_node;
+		(*des) = temp_node;
 	}
 	else
 	{
-		temp_node->next = *src;
-		*src = temp_node;
+		temp_node->next = *des;
+		*des = temp_node;
 	}
 }
 
-void	pa(t_node **b, t_node **a)
+void	pa(t_node **a, t_node **b)
 {
 	push(a, b);
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_node **a, t_node **b)
+void	pb(t_node **b, t_node **a)
 {
 	push(b, a);
 	write(1, "pb\n", 3);

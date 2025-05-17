@@ -52,24 +52,6 @@ void	sort_four(t_node **a, t_node **b)
 	ra(a);
 }
 
-// void	sort_five(t_node **a, t_node **b)
-// {
-// 	t_node	*min;
-
-// 	while (stack_len(*a) > 3)
-// 	{
-// 		min = findmin(*a);
-// 		while (*a && (*a)->value != min->value)
-// 			ra(a);
-// 		pb(b, a);
-// 	}
-// 	sort_three(a);
-// 	if (*b)
-// 		pa(a, b);
-// 	if (*b)
-// 		pa(a, b);
-// }
-
 void	sort_five(t_node **a, t_node **b)
 {
 	t_node	*min;
