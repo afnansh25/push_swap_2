@@ -44,12 +44,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-void	print_stack(t_node *stack)
-{
-	while (stack)
-	{
-		printf("val: %d, index: %d\n", stack->value, stack->index);
-		stack = stack->next;
-	}
-}

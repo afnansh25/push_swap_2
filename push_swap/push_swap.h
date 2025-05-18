@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <limits.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -30,7 +29,6 @@ char				**ft_split(char const *s, char c);
 
 // parsing
 void				parse_args(int ac, char **av, t_node **a);
-int					is_all_spaces(char *str);
 
 // Check_errors
 int					is_valid_input(char *av);
@@ -90,10 +88,8 @@ void				free_stack(t_node **stack);
 // str_utils
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 size_t				ft_strlen(const char *s);
-void				print_stack(t_node *stack);
 
 // split
-size_t				count_words(char const *s, char c);
 void				*free_split(char **split, size_t k);
 
 #endif

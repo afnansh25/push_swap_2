@@ -54,28 +54,29 @@ void	sort_four(t_node **a, t_node **b)
 
 void	sort_five(t_node **a, t_node **b)
 {
-	t_node	*min;
-	int		pos;
+    int	pos;
 
-	while (stack_len(*a) > 3)
-	{
-		min = findmin(*a);
-		pos = find_pos(*a, min->value);
-		if (pos <= stack_len(*a) / 2)
-		{
-			while ((*a)->value != min->value)
-				ra(a);
-		}
-		else
-		{
-			while ((*a)->value != min->value)
-				rra(a);
-		}
-		pb(b, a);
-	}
-	sort_three(a);
-	while (*b)
-		pa(a, b);
+    pos = find_pos(*a, 0);
+    if (pos <= 2)
+        while (pos--) 
+			ra(a);
+    else
+        while (pos++ < 5) 
+			rra(a);
+    pb(b, a);
+    pos = find_pos(*a, 1);
+    if (pos <= 1)
+        while (pos--) 
+			ra(a);
+    else
+        while (pos++ < 4) 
+			rra(a);
+    pb(b, a);
+    sort_three(a);
+    if ((*b)->value < (*b)->next->value)
+        sb(b);
+    pa(a, b);
+    pa(a, b);
 }
 
 int	find_pos(t_node *stack, int big_index)
