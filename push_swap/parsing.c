@@ -34,7 +34,7 @@ int	get_split_len(char **split)
 	return (i);
 }
 
-static void	process_token(char *token, t_node **a, char **split)
+void	process_token(char *token, t_node **a, char **split)
 {
 	int	error;
 	int	value;
@@ -55,7 +55,7 @@ static void	process_token(char *token, t_node **a, char **split)
 	}
 }
 
-static void	process_single_arg(char *arg, t_node **a)
+void	process_single_arg(char *arg, t_node **a)
 {
 	char	**split;
 	int		j;
